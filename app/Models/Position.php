@@ -6,5 +6,12 @@ use Illuminate\Database\Eloquent\Model;
 
 class Position extends Model
 {
-    //
+    protected $fillable = [
+        'pos_name',
+    ];
+
+    public function employee()
+    {
+        return $this->hasMany(Employee::class);
+    }
 }
